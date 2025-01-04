@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35222.181
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SpaceRythm", "SpaceRythm\SpaceRythm.csproj", "{2034EA59-BB2D-4214-A031-E6DC1744A70B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2034EA59-BB2D-4214-A031-E6DC1744A70B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2034EA59-BB2D-4214-A031-E6DC1744A70B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2034EA59-BB2D-4214-A031-E6DC1744A70B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2034EA59-BB2D-4214-A031-E6DC1744A70B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AA681588-205C-43B5-B23C-05D57EE9FDB9}
+	EndGlobalSection
+EndGlobal

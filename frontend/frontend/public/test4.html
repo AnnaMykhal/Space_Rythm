@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Music App</title>
+    <script src="https://unpkg.com/react/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"></link>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+<div id="root"></div>
+<script type="text/babel">
+    const App = () => {
+        return (
+            <div className="flex">
+                <aside className="w-1/5 bg-gray-200 p-4">
+                    <div className="flex items-center mb-4">
+                        <img src="https://placehold.co/50x50" alt="User avatar" className="rounded-full mr-2" />
+                        <div>
+                            <p className="font-bold">USERNAME</p>
+                            <p className="text-sm text-gray-600">@username</p>
+                        </div>
+                    </div>
+                    <nav>
+                        <ul>
+                            <li className="mb-2"><a href="#" className="text-gray-800">Профіль</a></li>
+                            <li className="mb-2"><a href="#" className="text-gray-800">Головна</a></li>
+                            <li className="mb-2"><a href="#" className="text-gray-800">Збережені</a></li>
+                            <li className="mb-2"><a href="#" className="text-gray-800">Підписки</a></li>
+                            <li className="mb-2"><a href="#" className="text-gray-800">Історії</a></li>
+                            <li className="mb-2"><a href="#" className="text-gray-800">Налаштування</a></li>
+                        </ul>
+                    </nav>
+                </aside>
+                <main className="w-4/5 p-4">
+                    <header className="flex items-center justify-between mb-4">
+                        <div className="flex items-center w-3/4">
+                            <input type="text" placeholder="Пошук" className="w-full p-2 border border-gray-300 rounded-l" />
+                            <button className="bg-blue-500 text-white p-2 rounded-r"><i className="fas fa-search"></i></button>
+                        </div>
+                        <div className="flex items-center">
+                            <img src="https://placehold.co/40x40" alt="User avatar" className="rounded-full mr-2" />
+                            <span className="font-bold">SpaceRhythm</span>
+                        </div>
+                    </header>
+                    <section className="mb-8">
+                        <h2 className="text-xl font-bold mb-4">Топ цього місяця</h2>
+                        <div className="flex space-x-4">
+                            <div className="w-1/4">
+                                <img src="https://placehold.co/200x150" alt="Benson Boone - Beautiful Things" className="w-full mb-2" />
+                                <p className="font-bold">Benson Boone - Beautiful Things</p>
+                                <p className="text-sm text-gray-600">02.02.24</p>
+                                <p className="text-sm text-gray-600">1.4 млн переглядів</p>
+                            </div>
+                            <div className="w-1/4">
+                                <img src="https://placehold.co/200x150" alt="Ariana Grande - yes, and?" className="w-full mb-2" />
+                                <p className="font-bold">Ariana Grande - yes, and?</p>
+                                <p className="text-sm text-gray-600">02.02.24</p>
+                                <p className="text-sm text-gray-600">1.4 млн переглядів</p>
+                            </div>
+                            <div className="w-1/4">
+                                <img src="https://placehold.co/200x150" alt="Miley Cyrus - Flowers" className="w-full mb-2" />
+                                <p className="font-bold">Miley Cyrus - Flowers</p>
+                                <p className="text-sm text-gray-600">12.02.24</p>
+                                <p className="text-sm text-gray-600">298 тис. переглядів</p>
+                            </div>
+                            <div className="w-1/4">
+                                <img src="https://placehold.co/200x150" alt="Jennifer Lopez - Can't Get Enough (feat. Latto)" className="w-full mb-2" />
+                                <p className="font-bold">Jennifer Lopez - Can't Get Enough (feat. Latto)</p>
+                                <p className="text-sm text-gray-600">12.02.24</p>
+                                <p className="text-sm text-gray-600">1.2 млн переглядів</p>
+                            </div>
+                        </div>
+                    </section>
+                    <section className="mb-8">
+                        <h2 className="text-xl font-bold mb-4">Мої рекомендації</h2>
+                        <div className="flex space-x-4">
+                            <div className="w-1/4">
+                                <img src="https://placehold.co/200x150" alt="David Kushner - Daylight" className="w-full mb-2" />
+                                <p className="font-bold">David Kushner - Daylight</p>
+                                <p className="text-sm text-gray-600">02.02.24</p>
+                                <p className="text-sm text-gray-600">1.2 млн переглядів</p>
+                            </div>
+                            <div className="w-1/4">
+                                <img src="https://placehold.co/200x150" alt="ruth b. - dandelions (cover)" className="w-full mb-2" />
+                                <p className="font-bold">ruth b. - dandelions (cover)</p>
+                                <p className="text-sm text-gray-600">02.02.24</p>
+                                <p className="text-sm text-gray-600">1.2 млн переглядів</p>
+                            </div>
+                            <div className="w-1/4">
+                                <img src="https://placehold.co/200x150" alt="ENLEO - НІЧНА ЛЮБОВ (ANOTHER LOVE cover)" className="w-full mb-2" />
+                                <p className="font-bold">ENLEO - НІЧНА ЛЮБОВ (ANOTHER LOVE cover)</p>
+                                <p className="text-sm text-gray-600">12.02.24</p>
+                                <p className="text-sm text-gray-600">298 тис. переглядів</p>
+                            </div>
+                            <div className="w-1/4">
+                                <img src="https://placehold.co/200x150" alt="10 Pieces by Ludovico Einaudi ft. Relaxing Piano" className="w-full mb-2" />
+                                <p className="font-bold">10 Pieces by Ludovico Einaudi ft. Relaxing Piano</p>
+                                <p className="text-sm text-gray-600">12.02.24</p>
+                                <p className="text-sm text-gray-600">1.2 млн переглядів</p>
+                            </div>
+                        </div>
+                    </section>
+                    <section className="mb-8">
+                        <h2 className="text-xl font-bold mb-4">Короткі</h2>
+                        <div className="flex space-x-4">
+                            <div className="w-1/6">
+                                <img src="https://placehold.co/150x200" alt="Short video 1" className="w-full mb-2" />
+                                <p className="text-sm text-gray-600">Наступні Кліпи</p>
+                            </div>
+                            <div className="w-1/6">
+                                <img src="https://placehold.co/150x200" alt="Short video 2" className="w-full mb-2" />
+                                <p className="text-sm text-gray-600">Наступні Кліпи</p>
+                            </div>
+                            <div className="w-1/6">
+                                <img src="https://placehold.co/150x200" alt="Short video 3" className="w-full mb-2" />
+                                <p className="text-sm text-gray-600">Наступні Кліпи</p>
+                            </div>
+                            <div className="w-1/6">
+                                <img src="https://placehold.co/150x200" alt="Short video 4" className="w-full mb-2" />
+                                <p className="text-sm text-gray-600">Наступні Кліпи</p>
+                            </div>
+                            <div className="w-1/6">
+                                <img src="https://placehold.co/150x200" alt="Short video 5" className="w-full mb-2" />
+                                <p className="text-sm text-gray-600">Наступні Кліпи</p>
+                            </div>
+                            <div className="w-1/6">
+                                <img src="https://placehold.co/150x200" alt="Short video 6" className="w-full mb-2" />
+                                <p className="text-sm text-gray-600">Наступні Кліпи</p>
+                            </div>
+                        </div>
+                    </section>
+                    <section>
+                        <h2 className="text-xl font-bold mb-4">Топ mp3</h2>
+                        <div className="flex space-x-4">
+                            <div className="w-1/6">
+                                <img src="https://placehold.co/150x150" alt="David Kushner - Daylight" className="w-full mb-2" />
+                                <p className="font-bold">Daylight</p>
+                                <p className="text-sm text-gray-600">David Kushner</p>
+                            </div>
+                            <div className="w-1/6">
+                                <img src="https://placehold.co/150x150" alt="Ariana Grande - yes, and?" className="w-full mb-2" />
+                                <p className="font-bold">Yes, and?</p>
+                                <p className="text-sm text-gray-600">Ariana Grande</p>
+                            </div>
+                            <div className="w-1/6">
+                                <img src="https://placehold.co/150x150" alt="Miley Cyrus - Flowers" className="w-full mb-2" />
+                                <p className="font-bold">Flowers</p>
+                                <p className="text-sm text-gray-600">Miley Cyrus</p>
+                            </div>
+                            <div className="w-1/6">
+                                <img src="https://placehold.co/150x150" alt="Jennifer Lopez - Can't Get Enough" className="w-full mb-2" />
+                                <p className="font-bold">Can't Get Enough</p>
+                                <p className="text-sm text-gray-600">Jennifer Lopez</p>
+                            </div>
+                            <div className="w-1/6">
+                                <img src="https://placehold.co/150x150" alt="Maroon 5 - Girls like you" className="w-full mb-2" />
+                                <p className="font-bold">Girls like you</p>
+                                <p className="text-sm text-gray-600">Maroon 5</p>
+                            </div>
+                            <div className="w-1/6">
+                                <img src="https://placehold.co/150x150" alt="Houdini" className="w-full mb-2" />
+                                <p className="font-bold">Houdini</p>
+                                <p className="text-sm text-gray-600">Unknown Artist</p>
+                            </div>
+                        </div>
+                    </section>
+                </main>
+            </div>
+        );
+    };
+
+    ReactDOM.render(<App />, document.getElementById('root'));
+</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+.logo-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    height: 37px;
+}
+
+/* Трикутник */
+.triangle {
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 20px solid #5F5F5F;
+    transform: rotate(90deg);
+    z-index: 0;
+}
+
+/* Неповний еліпс, поверх трикутника */
+.ellipse {
+    position: absolute;
+    left: 5px;
+    width: 31.58px;
+    height: 37px;
+    border: 3px solid #31C5F0;
+    border-radius: 50%;
+    box-sizing: border-box;
+    clip-path: inset(0 6px 0 0);
+    z-index: 1;
+}

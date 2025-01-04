@@ -1,0 +1,117 @@
+﻿@page
+@model TestUsersModel
+@{
+    ViewData["Title"] = "Test Users Controller";
+}
+
+<h2>Test Users Controller</h2>
+
+<!-- Кнопка для отримання всіх користувачів -->
+<button id="getAllUsersButton">Get All Users</button>
+<ul id="allUsersList"></ul> <!-- Список для всіх користувачів -->
+<!-- Поля для отримання користувача за ID -->
+<input type="number" id="userId" placeholder="User ID" required />
+<button id="getUserByIdButton">Get User by ID</button>
+<div id="userByIdResponse"></div> <!-- Для відповіді за ID -->
+<!-- Поля для отримання користувача за Username -->
+<input type="text" id="username" placeholder="Username" required />
+<button id="getByUsernameButton">Get User by Username</button>
+<div id="userByUsernameResponse"></div> <!-- Для відповіді за Username -->
+<!-- Поля для отримання користувача за Email -->
+<input type="email" id="email" placeholder="Email" required />
+<button id="getByEmailButton">Get User by Email</button>
+<div id="userByEmailResponse"></div> <!-- Для відповіді за Email -->
+<!-- Поля для завантаження аватару -->
+<input type="file" id="avatar" required />
+<button id="uploadAvatarButton">Upload Avatar</button>
+<div id="uploadAvatarResponse"></div> <!-- Для відповіді про завантаження -->
+
+<script>
+    // Функція для отримання всіх користувачів
+    document.getElementById("getAllUsersButton").addEventListener("click", function () {
+        fetch('/api/users') // Вказати правильний шлях до вашого API
+            .then(response => response.json())
+            .then(data => {
+                const usersList = document.getElementById("allUsersList");
+                usersList.innerHTML = ""; // Очищення попередніх результатів
+                data.forEach(user => {
+                    console.log(user); // Логування об'єкта користувача
+                    const listItem = document.createElement("li");
+                    // Переконайтеся, що поля відповідають вашим даним
+                    listItem.textContent = `ID: ${user.id}, Name: ${user.username}`;
+                    usersList.appendChild(listItem);
+                });
+            })
+            .catch(error => console.error('Error fetching users:', error));
+    });
+
+    // Функція для отримання користувача за ID
+    document.getElementById("getUserByIdButton").addEventListener("click", function () {
+        const id = document.getElementById("userId").value;
+        fetch(`/api/users/${id}`) // Змінити на відповідний шлях до API
+            .then(response => response.json())
+            .then(data => {
+                console.log('Data:', data);
+                const responseDiv = document.getElementById("userByIdResponse");
+                // Вказати відповідні поля
+                responseDiv.innerHTML = `User ID: ${data.id}, Name: ${data.username}`;
+            })
+            .catch(error => console.error('Error fetching user by ID:', error));
+    });
+
+    // Функція для отримання користувача за Username
+    document.getElementById("getByUsernameButton").addEventListener("click", function () {
+        const username = document.getElementById("username").value;
+        fetch(`/api/users/by-username/${username}`) // Змінити на відповідний шлях до API
+            .then(response => response.json())
+            .then(data => {
+                console.log('Data:', data);
+                const responseDiv = document.getElementById("userByUsernameResponse");
+                // Вказати відповідні поля
+                responseDiv.innerHTML = `User ID: ${data.id}, Name: ${data.username}`;
+            })
+            .catch(error => console.error('Error fetching user by username:', error));
+    });
+
+    // Функція для отримання користувача за Email
+    document.getElementById("getByEmailButton").addEventListener("click", function () {
+        const email = document.getElementById("email").value; // Додайте отримання email з поля вводу
+        console.log('Fetching user by email:', email);
+        fetch(`/api/users/by-email/${email}`) // Використовуйте змінну email в URL
+            .then(response => response.json())
+            .then(data => {
+                console.log('Data:', data);
+                const responseDiv = document.getElementById("userByEmailResponse");
+                // Вказати відповідні поля
+                responseDiv.innerHTML = `User ID: ${data.id}, Name: ${data.username}`;
+            })
+            .catch(error => console.error('Error fetching user by email:', error));
+    });
+
+    // Функція для завантаження аватара
+    document.getElementById("uploadAvatarButton").addEventListener("click", function () {
+        const avatarFile = document.getElementById("avatar").files[0];
+        const formData = new FormData();
+        formData.append("avatar", avatarFile);
+        console.log('Uploading avatar:', avatarFile);
+        fetch('/api/users/upload-avatar', { // Змінити на відповідний шлях до API
+            method: 'POST',
+            body: formData
+        })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Data:', data);
+                const responseDiv = document.getElementById("uploadAvatarResponse");
+                responseDiv.innerHTML = data.message; // Або відповідне поле з відповіді
+            })
+            .catch(error => console.error('Error uploading avatar:', error));
+    });
+</script>
+
+<div>
+    @if (Model.ResponseMessage != null)
+    {
+        <p>@Model.ResponseMessage</p>
+    }
+</div>
+

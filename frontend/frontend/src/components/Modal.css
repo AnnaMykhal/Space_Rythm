@@ -1,0 +1,61 @@
+/* Для модального вікна, щоб воно було розташоване в центрі екрана */
+.fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 50;
+}
+
+/* Тінь для модального вікна */
+.bg-gray-700 {
+    background-color: #374151; /* темно-сірий колір */
+}
+
+/* Видалено прозорість */
+.bg-opacity-50 {
+    opacity: 1; /* фон тепер непрозорий */
+}
+
+/* Стиль для самого модального вікна */
+.bg-white {
+    background-color: #fff;
+}
+
+.shadow-lg {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Анімація для з'явлення модального вікна */
+.animate__animated {
+    animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.7);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Стиль кнопки */
+button {
+    background-color: #1d4ed8; /* синій колір */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 9999px;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #2563eb;
+}

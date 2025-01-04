@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        .header {
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .header .search-container {
+            position: relative;
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .header input[type="text"] {
+            width: 300px;
+            padding: 5px 10px;
+            border-radius: 20px;
+            border: none;
+            color: gray;
+        }
+        .header .search-icon {
+            margin-left: -30px;
+            cursor: pointer;
+            color: blue;
+        }
+        .header .logo {
+            font-size: 24px;
+            font-weight: bold;
+            margin-right: 100px;
+        }
+        .sidebar {
+            width: 200px;
+            background-color: #808080;
+            color: white;
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            padding-top: 20px;
+            text-align: center;
+        }
+        .sidebar img {
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            margin: 0 auto;
+        }
+        .sidebar a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            padding: 10px 20px;
+        }
+        .sidebar a.nickname {
+            color: #00bfff;
+        }
+        .sidebar a:hover {
+            background-color: #575757;
+        }
+        .sidebar a.active {
+            background-color: #575757;
+        }
+        .content {
+            margin-left: 220px;
+            padding: 20px;
+        }
+        .profile-header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        .profile-header img {
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+        }
+        .profile-header .profile-info {
+            margin-top: 10px;
+        }
+        .profile-header .profile-info a {
+            color: #00bfff;
+            text-decoration: none;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .profile-header .profile-info a:hover {
+            text-decoration: underline;
+        }
+        .profile-header .profile-info a i {
+            margin-left: 5px;
+        }
+        .profile-header .profile-info .stats {
+            display: flex;
+            justify-content: center;
+            margin-top: 5px;
+        }
+        .profile-header .profile-info .stats div {
+            margin: 0 10px;
+        }
+        .profile-header .profile-info .stats div span {
+            display: block;
+        }
+        .tabs {
+            display: flex;
+            justify-content: flex-start;
+            margin-top: 20px;
+        }
+        .tabs button {
+            background-color: #e0e0e0;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        .tabs button.active {
+            background-color: #333;
+            color: white;
+        }
+        .video-section {
+            display: flex;
+            justify-content: flex-start;
+            margin-top: 20px;
+            border-top: 1px solid #ccc;
+            padding-top: 20px;
+        }
+        .video-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 0 10px;
+            width: 200px;
+            text-align: center;
+        }
+        .video-card img {
+            width: 100%;
+        }
+        .video-card .description {
+            padding: 10px;
+        }
+        .video-card .description img {
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+        }
+        .video-card .description p {
+            margin: 5px 0 0 0;
+        }
+        .add-video {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 10px;
+        }
+        .add-video button {
+            background-color: #e0e0e0;
+            border: none;
+            padding: 20px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+<div class="header">
+    <div class="search-container">
+        <input placeholder="Пошук" type="text"/>
+        <i class="fas fa-search search-icon">
+        </i>
+    </div>
+    <div class="logo">
+        SpaceRythm
+    </div>
+</div>
+<div class="sidebar">
+    <img alt="User profile picture" height="50" src="https://storage.googleapis.com/a1aa/image/f1BW5utXbs2DbaZwjYYGnPzeXnVnab99ZrRksXhcFdu5aWnTA.jpg" width="50"/>
+    <a class="nickname" href="#">
+        yelyzaveta_poli67
+    </a>
+    <a class="active" href="#">
+        Профіль
+    </a>
+    <a href="#">
+        Головна
+    </a>
+    <a href="#">
+        Збережені
+    </a>
+    <a href="#">
+        Фан-клуби
+    </a>
+    <a href="#">
+        Новини
+    </a>
+    <a href="#">
+        Підписки
+    </a>
+    <a href="#">
+        Історія
+    </a>
+    <a href="#">
+        Ліцензії
+    </a>
+    <a href="#">
+        Налаштування
+    </a>
+    <div style="position: absolute; bottom: 20px; left: 20px; color: #999;">
+        © 2024 Google LLC
+    </div>
+</div>
+<div class="content">
+    <div class="profile-header">
+        <img alt="User profile picture" height="100" src="https://storage.googleapis.com/a1aa/image/f1BW5utXbs2DbaZwjYYGnPzeXnVnab99ZrRksXhcFdu5aWnTA.jpg" width="100"/>
+        <div class="profile-info">
+            <a href="#">
+                yelyzaveta_poli67
+                <i class="fas fa-pencil-alt">
+                </i>
+            </a>
+            <div class="stats">
+                <div>
+       <span>
+        Слугачі:
+       </span>
+                    <span>
+        162
+       </span>
+                </div>
+                <div>
+       <span>
+        Підписки:
+       </span>
+                    <span>
+        21
+       </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="tabs">
+        <button class="active">
+            Короткі
+        </button>
+        <button>
+            Відео
+        </button>
+        <button>
+            Mp3
+        </button>
+    </div>
+    <div class="video-section">
+        <div class="video-card">
+            <img alt="Video thumbnail" height="300" src="https://storage.googleapis.com/a1aa/image/6Tu6arnU4CbCGtrQDAf3PfmdSybg6Vtufgnh0b1eHtTcrZdOB.jpg" width="200"/>
+            <div class="description">
+                <img alt="User profile picture" height="30" src="https://storage.googleapis.com/a1aa/image/f1BW5utXbs2DbaZwjYYGnPzeXnVnab99ZrRksXhcFdu5aWnTA.jpg" width="30"/>
+                <p>
+                    #виступ #dualipa
+                </p>
+            </div>
+        </div>
+        <div class="video-card">
+            <img alt="Video thumbnail" height="300" src="https://storage.googleapis.com/a1aa/image/6Tu6arnU4CbCGtrQDAf3PfmdSybg6Vtufgnh0b1eHtTcrZdOB.jpg" width="200"/>
+            <div class="description">
+                <img alt="User profile picture" height="30" src="https://storage.googleapis.com/a1aa/image/f1BW5utXbs2DbaZwjYYGnPzeXnVnab99ZrRksXhcFdu5aWnTA.jpg" width="30"/>
+                <p>
+                    #виступ #dualipa
+                </p>
+            </div>
+        </div>
+        <div class="add-video">
+            <button>
+                +
+            </button>
+        </div>
+    </div>
+</div>
+</body>
+</html>
